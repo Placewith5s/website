@@ -8,13 +8,14 @@ document.addEventListener('DOMContentLoaded', async() => {
     const send_btn: HTMLButtonElement | null = main.querySelector('#send-btn');
 
     const send = async (): Promise<void> => {
+        const model_choices: HTMLSelectElement | null = main.querySelector('select');
         const msg: HTMLInputElement | null = main.querySelector('#msg');
         const image_inp: HTMLInputElement | null = main.querySelector('#image');
         const wait_msg: HTMLParagraphElement | null = main.querySelector('#wait-msg');
         const response_result: HTMLDivElement | null = main.querySelector('#response-result');
 
         const check_invalid_elements = async(): Promise<void | never> => {
-            if (!msg || !send_btn || !wait_msg || !response_result) {
+            if (!model_choices || !msg || !send_btn || !wait_msg || !response_result) {
                 throw new Error("Required elements missing!");
             }
         }
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', async() => {
         const alert_msg: string = "Error! Try again later!"
 
         const fd: FormData = new FormData();
+        fd.append('model-choices', model_choices.value)
         fd.append('msg', trimmed_msg_val);
 
         if (image_inp.files.length > 0) {

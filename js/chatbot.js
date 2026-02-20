@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
     const send_btn = main.querySelector('#send-btn');
     const send = async () => {
+        const model_choices = main.querySelector('select');
         const msg = main.querySelector('#msg');
         const image_inp = main.querySelector('#image');
         const wait_msg = main.querySelector('#wait-msg');
         const response_result = main.querySelector('#response-result');
         const check_invalid_elements = async () => {
-            if (!msg || !send_btn || !wait_msg || !response_result) {
+            if (!model_choices || !msg || !send_btn || !wait_msg || !response_result) {
                 throw new Error("Required elements missing!");
             }
         };
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const trimmed_msg_val = msg.value.trim();
         const alert_msg = "Error! Try again later!";
         const fd = new FormData();
+        fd.append('model-choices', model_choices.value);
         fd.append('msg', trimmed_msg_val);
         if (image_inp.files.length > 0) {
             fd.append('image', image_inp.files[0]);
