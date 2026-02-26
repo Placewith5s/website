@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         #inner;
         #current_index;
         constructor() {
-            this.#main = document.querySelector('main');
+            this.#main = document.body.querySelector('main');
             if (!this.#main) {
                 throw new Error("No main element!");
             }

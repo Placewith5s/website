@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         constructor(text_area_element: HTMLTextAreaElement) {
             this.#text_area_element = text_area_element;
-            this.#main = document.querySelector('main');
+            this.#main = document.body.querySelector('main');
 
             if (!this.#main) {
                 throw new Error("No main element!");

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         #footer;
         #year;
         constructor() {
-            this.#footer = document.querySelector('footer');
+            this.#footer = document.body.querySelector('footer');
             if (!this.#footer) {
                 throw new Error("No footer element!");
             }

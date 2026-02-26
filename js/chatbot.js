@@ -1,12 +1,12 @@
 "use strict";
 document.addEventListener('DOMContentLoaded', async () => {
-    const main = document.querySelector('main');
+    const main = document.body.querySelector('main');
     if (!main) {
         throw new Error("No main element!");
     }
     const send_btn = main.querySelector('#send-btn');
     const send = async () => {
-        const model_choices = main.querySelector('select');
+        const model_choices = main.querySelector('select#model-choices');
         const msg = main.querySelector('#msg');
         const image_inp = main.querySelector('#image');
         const wait_msg = main.querySelector('#wait-msg');
@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             result.classList.add('chat-response');
             result.innerHTML = safe_html;
             response_result.appendChild(result);
+            // clear previous message on success
+            msg.value = "";
         }
         catch (err) {
             alert(alert_msg);

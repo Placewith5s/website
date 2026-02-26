@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async() => {
-    const main: HTMLElement | null = document.querySelector('main');
+    const main: HTMLElement | null = document.body.querySelector('main');
 
     if (!main) {
         throw new Error("No main element!");
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     const send_btn: HTMLButtonElement | null = main.querySelector('#send-btn');
 
     const send = async (): Promise<void> => {
-        const model_choices: HTMLSelectElement | null = main.querySelector('select');
+        const model_choices: HTMLSelectElement | null = main.querySelector('select#model-choices');
         const msg: HTMLInputElement | null = main.querySelector('#msg');
         const image_inp: HTMLInputElement | null = main.querySelector('#image');
         const wait_msg: HTMLParagraphElement | null = main.querySelector('#wait-msg');
@@ -61,6 +61,9 @@ document.addEventListener('DOMContentLoaded', async() => {
             result.classList.add('chat-response');
             result.innerHTML = safe_html;
             response_result.appendChild(result);
+
+            // clear previous message on success
+            msg.value = "";
         } catch (err) {
             alert(alert_msg)
             throw new Error(`Chatbot can't respond! ${err}`);
