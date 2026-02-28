@@ -17,11 +17,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         };
         await check_invalid_elements();
-        const trimmed_msg_val = msg.value.trim();
         const alert_msg = "Error! Try again later!";
         const fd = new FormData();
         fd.append('model-choices', model_choices.value);
-        fd.append('msg', trimmed_msg_val);
+        fd.append('msg', msg.value);
         if (image_inp.files.length > 0) {
             fd.append('image', image_inp.files[0]);
         }

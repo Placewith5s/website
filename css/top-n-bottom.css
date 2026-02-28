@@ -128,7 +128,7 @@ summary {
 }
 a {color: var(--accent)}
 button {
-    background-color: var(--bg);
+    background: transparent;
     border: 0.15rem solid var(--accent);
     color: var(--fg);
     padding-bottom: 1rem;
@@ -189,8 +189,7 @@ nav.desktop-links {
 }
 nav.desktop-links {
     align-items: center;
-    gap: 20rem;
-    justify-content: center;
+    justify-content: space-between;
     padding: 1rem;
     position: relative
 }
