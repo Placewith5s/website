@@ -20,10 +20,13 @@ main input[type="file"] {
     align-self: flex-start;
     order: 3
 }
+main p#wait-msg {
+    order: 4
+}
 main button[type="button"] {
     border-radius: 1rem;
-    order: 4;
+    order: 5;
     width: 15%
 }
-.twitter-share-button {order: 5}
-.reddit-share-link {order: 6}
+.twitter-share-button {order: 6}
+.reddit-share-link {order: 7}
