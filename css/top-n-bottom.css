@@ -363,7 +363,7 @@ nav.drawer a,
 } */
 @media only screen and (prefers-color-scheme: dark) {
     :root { /* Utilized for every single page */
-        --accent: #EDD9D9;
+        --accent: #F8D5BF;
         --bg: #444;
         --fg: #fff;
         --hover-shadow: 0 0.5rem 1.5rem rgba(255, 255, 255, 0.2)
