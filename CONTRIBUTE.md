@@ -12,12 +12,11 @@ Please note we have a code of conduct, please follow it in all your interactions
 ### Formatting
 General
 - Files shouldn't have manual obfuscation (gnioerbgoiwbrogiwrbogir)
-- One liners - 60 characters limit. (applies to everything). Exceptions: .html files and URLs. [Character counter](https://wordcounter.net/character-count)
+- One liners - 60 characters limit. (applies to everything). Exception: URLs. [Character counter](https://wordcounter.net/character-count)
 - Unnecessary framework usage that isn't already included won't be accepted
-- 4 spaces per indent level. Exceptions: see [Prettier ignore](.prettierignore)
 
 HTML
-- Both Inline & style blocks won't be accepted. Exception: Dynamic content or third-party apps
+- Both inline & internal styles won't be accepted. Exception: Dynamic content or third-party apps
 - Any usage of b and br won't be accepted. Use CSS instead
 
 CSS

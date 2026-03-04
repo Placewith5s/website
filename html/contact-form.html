@@ -1,171 +1,342 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.placewith5s.com/html/contact-form">
-    <!-- Primary Meta Tags -->
-    <title>Contact Us | Placewith5s</title>
-    <meta name="title" content="Contact Us | Placewith5s">
-    <meta name="description" content="Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.placewith5s.com/html/contact-form">
-    <meta property="og:title" content="Contact Us | Placewith5s">
-    <meta property="og:description" content="Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!">
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.placewith5s.com/html/contact-form">
-    <meta property="twitter:title" content="Contact Us | Placewith5s">
-    <meta property="twitter:description" content="Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!">
-    
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "name": "Contact Us | Placewith5s",
-        "description": "Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!",
-        "url": "https://www.placewith5s.com/html/contact-form",
-        "mainEntity": {
-          "@type": "Organization",
-          "name": "Placewith5s",
-          "url": "https://www.placewith5s.com",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "Customer Support",
-            "email": "placewith5s@gmail.com",
-            "url": "https://www.placewith5s.com/html/contact-form",
-            "availableLanguage": ["English"]
-          }
-        }
-      }
-    </script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="canonical"
+            href="https://www.placewith5s.com/html/contact-form" />
+        <!-- Primary Meta Tags -->
+        <title>Contact Us | Placewith5s</title>
+        <meta
+            name="title"
+            content="Contact Us | Placewith5s" />
+        <meta
+            name="description"
+            content="Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!" />
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://www.placewith5s.com/html/contact-form" />
+        <meta
+            property="og:title"
+            content="Contact Us | Placewith5s" />
+        <meta
+            property="og:description"
+            content="Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!" />
+        <!-- Twitter -->
+        <meta
+            property="twitter:card"
+            content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content="https://www.placewith5s.com/html/contact-form" />
+        <meta
+            property="twitter:title"
+            content="Contact Us | Placewith5s" />
+        <meta
+            property="twitter:description"
+            content="Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!" />
 
-    <link rel="stylesheet" href="/css/contact-form.css">
-    <link rel="stylesheet" href="/css/top-n-bottom.css">
-  </head>
-  <body>
-    <header>
-      <nav class="desktop-links" aria-label="Main Navigation">
-        <a href="/" aria-label="Home">
-          <span>Home</span>
-        </a>
-        <a href="/html/about/about-software" aria-label="About Tools">
-          <span>About Tools</span>
-        </a>
-        <a href="/html/about/about-us" aria-label="About Us">
-          <span>About Us</span>
-        </a>
-        <a href="/html/faq" aria-label="FAQs">
-          <span>FAQs</span>
-        </a>
-        <details class="dropdown-menu-container">
-          <summary id="dropdown-menu">Guides</summary>
-            <a href="/html/guides/optimize-windows-pc">Optimize Windows PC</a>
-            <a href="/html/guides/troubleshoot-windows-pc">Troubleshoot Windows PC</a>
-        </details>
-      </nav>
-      <button class="menu-icon" id="menu-icon" aria-haspopup="menu" aria-label="Open Menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </button>
-      <nav class="drawer" id="drawer" role="menu">
-        <a href="/" id="home-link" role="menuitem" aria-label="Home">
-          <span>Home</span>
-        </a>
-        <a href="/html/about/about-software" role="menuitem" id="about-software-link" aria-label="About Tools">
-          <span>About Tools</span>
-        </a>
-        <a href="/html/about/about-us" id="about-us-link" role="menuitem" aria-label="About Us">
-          <span>About Us</span>
-        </a>
-        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs">
-          <span>FAQs</span>
-        </a>
-        <a href="/html/guides/optimize-windows-pc" id="optimize-windows-pc-link" role="menuitem" aria-label="Optimize Windows PC">
-          <span>Optimize Windows PC</span>
-        </a>
-        <a href="/html/guides/troubleshoot-windows-pc" id="troubleshoot-windows-pc-link" role="menuitem" aria-label="Troubleshoot Windows PC">
-          <span>Troubleshoot Windows PC</span>
-        </a>
-        <button id="hide-drawer-btn">Hide</button>
-      </nav>
-      <h1>Contact Placewith5s</h1>
-    </header>
-    <main>
-      <form action="https://formspree.io/f/mnqekdoq" method="post">
-        <h2 class="spaced-top" id="send-us-a-message-heading">Send Us a Message</h2>
-        <p class="spaced-top-bottom">We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.</p>
-        
-        <div class="form-group spaced-bottom">
-          <label for="name" class="spaced-top">Your Name: (optional)</label>
-          <input type="text" name="name" id="name" autocomplete="name" placeholder="Name...">
-        </div>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "name": "Contact Us | Placewith5s",
+                "description": "Get in touch with Placewith5s for questions, support, or to provide feedback. We're here to help!",
+                "url": "https://www.placewith5s.com/html/contact-form",
+                "mainEntity": {
+                    "@type": "Organization",
+                    "name": "Placewith5s",
+                    "url": "https://www.placewith5s.com",
+                    "contactPoint": {
+                        "@type": "ContactPoint",
+                        "contactType": "Customer Support",
+                        "email": "placewith5s@gmail.com",
+                        "url": "https://www.placewith5s.com/html/contact-form",
+                        "availableLanguage": ["English"]
+                    }
+                }
+            }
+        </script>
 
-        <div class="form-group spaced-bottom">
-          <label for="email">Your Email:</label>
-          <input type="email" name="email" id="email" required autocomplete="email" placeholder="Email...">
-        </div>
+        <link
+            rel="stylesheet"
+            href="/css/contact-form.css" />
+        <link
+            rel="stylesheet"
+            href="/css/top-n-bottom.css" />
+    </head>
+    <body>
+        <header>
+            <nav
+                class="desktop-links"
+                aria-label="Main Navigation">
+                <a href="/" aria-label="Home">
+                    <span>Home</span>
+                </a>
+                <a
+                    href="/html/about/about-software"
+                    aria-label="About Tools">
+                    <span>About Tools</span>
+                </a>
+                <a
+                    href="/html/about/about-us"
+                    aria-label="About Us">
+                    <span>About Us</span>
+                </a>
+                <a href="/html/faq" aria-label="FAQs">
+                    <span>FAQs</span>
+                </a>
+                <details class="dropdown-menu-container">
+                    <summary id="dropdown-menu">
+                        Guides
+                    </summary>
+                    <a
+                        href="/html/guides/optimize-windows-pc"
+                        >Optimize Windows PC</a
+                    >
+                    <a
+                        href="/html/guides/troubleshoot-windows-pc"
+                        >Troubleshoot Windows PC</a
+                    >
+                </details>
+            </nav>
+            <button
+                class="menu-icon"
+                id="menu-icon"
+                aria-haspopup="menu"
+                aria-label="Open Menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <nav class="drawer" id="drawer" role="menu">
+                <a
+                    href="/"
+                    id="home-link"
+                    role="menuitem"
+                    aria-label="Home">
+                    <span>Home</span>
+                </a>
+                <a
+                    href="/html/about/about-software"
+                    role="menuitem"
+                    id="about-software-link"
+                    aria-label="About Tools">
+                    <span>About Tools</span>
+                </a>
+                <a
+                    href="/html/about/about-us"
+                    id="about-us-link"
+                    role="menuitem"
+                    aria-label="About Us">
+                    <span>About Us</span>
+                </a>
+                <a
+                    href="/html/faq"
+                    id="faq-link"
+                    role="menuitem"
+                    aria-label="FAQs">
+                    <span>FAQs</span>
+                </a>
+                <a
+                    href="/html/guides/optimize-windows-pc"
+                    id="optimize-windows-pc-link"
+                    role="menuitem"
+                    aria-label="Optimize Windows PC">
+                    <span>Optimize Windows PC</span>
+                </a>
+                <a
+                    href="/html/guides/troubleshoot-windows-pc"
+                    id="troubleshoot-windows-pc-link"
+                    role="menuitem"
+                    aria-label="Troubleshoot Windows PC">
+                    <span>Troubleshoot Windows PC</span>
+                </a>
+                <button id="hide-drawer-btn">Hide</button>
+            </nav>
+            <h1>Contact Placewith5s</h1>
+        </header>
+        <main>
+            <form
+                action="https://formspree.io/f/mnqekdoq"
+                method="post">
+                <h2
+                    class="spaced-top"
+                    id="send-us-a-message-heading">
+                    Send Us a Message
+                </h2>
+                <p class="spaced-top-bottom">
+                    We'd love to hear from you! Fill out the
+                    form below and we'll get back to you as
+                    soon as possible.
+                </p>
 
-        <div class="form-group spaced-bottom">
-          <label for="message">Your Message:</label>
-          <textarea id="message" name="message" required autocomplete="off" placeholder="Message..." minlength="100" maxlength="300"></textarea>
-          <span class="char-count" aria-live="polite">0/300</span>
-        </div>
+                <div class="form-group spaced-bottom">
+                    <label for="name" class="spaced-top"
+                        >Your Name: (optional)</label
+                    >
+                    <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        autocomplete="name"
+                        placeholder="Name..." />
+                </div>
 
-        <div class="gdpr-consent spaced-bottom">
-          <label for="consent">I consent to the processing of my personal data as described in the:</label>
-          <a href="/html/policies/privacy-policy" target="_blank" rel="noopener noreferrer" title="opens in a new tab">Privacy Policy</a>
-          <input type="checkbox" name="consent" id="consent" required>
-        </div>
+                <div class="form-group spaced-bottom">
+                    <label for="email">Your Email:</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        required
+                        autocomplete="email"
+                        placeholder="Email..." />
+                </div>
 
-        <button type="submit" class="spaced-top-bottom">Submit</button>
-      </form>
+                <div class="form-group spaced-bottom">
+                    <label for="message"
+                        >Your Message:</label
+                    >
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        autocomplete="off"
+                        placeholder="Message..."
+                        minlength="100"
+                        maxlength="300"></textarea>
+                    <span
+                        class="char-count"
+                        aria-live="polite"
+                        >0/300</span
+                    >
+                </div>
 
-      <a class="twitter-share-button" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?url=https://www.placewith5s.com/contact-form&utm_source=placewith5s">Share on Twitter</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fplacewith5s.com/contact-form&utm_source=placewith5s" target="_blank" rel="noopener noreferrer">Share on Reddit</a>
-    </main>
-    
-    <footer>
-      <div class="footer-container">
-        <div aria-labelledby="footer-about-heading" class="footer-column">
-          <h4 id="footer-about-heading">About</h4>
-          <nav class="footer-links-about">
-            <a href="/html/about/about-software">About Tools</a>
-            <a href="/html/about/about-us">About Us</a>
-          </nav>
-        </div>
-        <div aria-labelledby="footer-policies-heading" class="footer-column">
-          <h4 id="footer-policies-heading">Policies</h4>
-          <nav class="footer-links-policies">
-            <a href="/html/policies/privacy-policy">Privacy Policy</a>
-            <a href="/html/policies/terms-of-service">Terms of Service</a>
-          </nav>
-        </div>
-        <div aria-labelledby="footer-contact-heading" class="footer-column">
-          <h4 id="footer-contact-heading">Contact</h4>
-          <nav class="footer-links-contact">
-            <a href="/html/contact-form" aria-current="page">Contact Us</a>
-          </nav>
-        </div>
-        <div aria-labelledby="chatbot-heading" class="footer-column">
-          <h4 id="chatbot-heading">Chatbot</h4>
-          <nav class="footer-links-chatbot">
-            <a href="/html/chatbot">Chatbot</a>
-          </nav>
-        </div>
-      </div>
-      <p class="copyright"> © 2023-<span id="year"></span>
-        Front-end source code is licensed under the MIT license.
-        <span>&#8201;Website content, branding, and design are proprietary.</span>
-        <span>&#8201;Third-party components are licensed under their respective licenses.</span>
-      </p>
-    </footer>
+                <div class="gdpr-consent spaced-bottom">
+                    <label for="consent"
+                        >I consent to the processing of my
+                        personal data as described in
+                        the:</label
+                    >
+                    <a
+                        href="/html/policies/privacy-policy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="opens in a new tab"
+                        >Privacy Policy</a
+                    >
+                    <input
+                        type="checkbox"
+                        name="consent"
+                        id="consent"
+                        required />
+                </div>
 
-    <script src="/js/script.js" defer></script>
-    <script src="/js/contact-form.js" defer></script>
-    <script src="/js/footer-date.js" defer></script>
-  </body>
+                <button
+                    type="submit"
+                    class="spaced-top-bottom">
+                    Submit
+                </button>
+            </form>
+
+            <a
+                class="twitter-share-button"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/intent/tweet?url=https://www.placewith5s.com/contact-form&utm_source=placewith5s"
+                >Share on Twitter</a
+            >
+            <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"></script>
+            <a
+                href="https://www.reddit.com/submit?url=https%3A%2F%2Fplacewith5s.com/contact-form&utm_source=placewith5s"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Share on Reddit</a
+            >
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div
+                    aria-labelledby="footer-about-heading"
+                    class="footer-column">
+                    <h4 id="footer-about-heading">About</h4>
+                    <nav class="footer-links-about">
+                        <a href="/html/about/about-software"
+                            >About Tools</a
+                        >
+                        <a href="/html/about/about-us"
+                            >About Us</a
+                        >
+                    </nav>
+                </div>
+                <div
+                    aria-labelledby="footer-policies-heading"
+                    class="footer-column">
+                    <h4 id="footer-policies-heading">
+                        Policies
+                    </h4>
+                    <nav class="footer-links-policies">
+                        <a
+                            href="/html/policies/privacy-policy"
+                            >Privacy Policy</a
+                        >
+                        <a
+                            href="/html/policies/terms-of-service"
+                            >Terms of Service</a
+                        >
+                    </nav>
+                </div>
+                <div
+                    aria-labelledby="footer-contact-heading"
+                    class="footer-column">
+                    <h4 id="footer-contact-heading">
+                        Contact
+                    </h4>
+                    <nav class="footer-links-contact">
+                        <a
+                            href="/html/contact-form"
+                            aria-current="page"
+                            >Contact Us</a
+                        >
+                    </nav>
+                </div>
+                <div
+                    aria-labelledby="chatbot-heading"
+                    class="footer-column">
+                    <h4 id="chatbot-heading">Chatbot</h4>
+                    <nav class="footer-links-chatbot">
+                        <a href="/html/chatbot">Chatbot</a>
+                    </nav>
+                </div>
+            </div>
+            <p class="copyright">
+                © 2023-<span id="year"></span>
+                Front-end source code is licensed under the
+                MIT license.
+                <span
+                    >&#8201;Website content, branding, and
+                    design are proprietary.</span
+                >
+                <span
+                    >&#8201;Third-party components are
+                    licensed under their respective
+                    licenses.</span
+                >
+            </p>
+        </footer>
+
+        <script src="/js/script.js" defer></script>
+        <script src="/js/contact-form.js" defer></script>
+        <script src="/js/footer-date.js" defer></script>
+    </body>
 </html>

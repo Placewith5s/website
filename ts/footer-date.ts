@@ -1,30 +1,30 @@
-document.addEventListener("DOMContentLoaded", () => {
-    class Footer_Date {
-        #footer: HTMLElement | null;
-        #year: HTMLSpanElement | null;
-        
-        constructor() {
-            this.#footer = document.body.querySelector('footer');
+class Footer_Date {
+    #footer: HTMLElement | null;
+    #year: HTMLSpanElement | null;
 
-            if (!this.#footer) {
-                throw new Error("No footer element!");
-            }
+    constructor() {
+        this.#footer =
+            document.body.querySelector("footer");
 
-            this.#year = this.#footer.querySelector("#year");
-
-            this.#upd_year();
+        if (!this.#footer) {
+            throw new Error("No footer element!");
         }
 
+        this.#year = this.#footer.querySelector("#year");
 
-        #upd_year(): void {
-            const current_date: Date = new Date();
-            const current_year: number = current_date.getFullYear();
-            
-            if (this.#year) {
-                this.#year.textContent = current_year.toString() + "\u2009";
-            }
-        }
+        this.#upd_year();
     }
 
-    new Footer_Date();
-});
+    #upd_year(): void {
+        const current_date: Date = new Date();
+        const current_year: number =
+            current_date.getFullYear();
+
+        if (this.#year) {
+            this.#year.textContent =
+                current_year.toString() + "\u2009";
+        }
+    }
+}
+
+new Footer_Date();

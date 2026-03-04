@@ -1,122 +1,199 @@
-document.addEventListener("DOMContentLoaded", async() => {
-    class Carousel {
-        #main: HTMLElement | null;
-        #items: NodeListOf<HTMLDivElement>;
-        #inner: HTMLElement | null;
-        #current_index: number | undefined;
-        
-        constructor() {
-            this.#main = document.body.querySelector('main');
+class Carousel {
+    #main: HTMLElement | null;
+    #items: NodeListOf<HTMLDivElement>;
+    #inner: HTMLElement | null;
+    #current_index: number | undefined;
 
-            if (!this.#main) {
-                throw new Error("No main element!");
-            }
+    constructor() {
+        this.#main = document.body.querySelector("main");
 
-            this.#items = this.#main.querySelectorAll(".carousel-item");
-            this.#inner = this.#main.querySelector(".carousel-inner");
-
-            if (!this.#items.length) {
-                throw new Error("No carousel items!");
-            }
-
-            this.#current_index = 0;
-            this.#show_next_item();
-            setInterval(() => this.#show_next_item(), 5000);
+        if (!this.#main) {
+            throw new Error("No main element!");
         }
 
-        #check_inner(): void | never {
+        this.#items = this.#main.querySelectorAll(
+            ".carousel-item"
+        );
+        this.#inner = this.#main.querySelector(
+            ".carousel-inner"
+        );
+
+        if (!this.#items.length) {
+            throw new Error("No carousel items!");
+        }
+
+        this.#current_index = 0;
+        this.#show_next_item();
+        setInterval(() => this.#show_next_item(), 5000);
+    }
+
+    #check_inner(): void | never {
+        if (!this.#inner) {
+            throw new Error("No carousel inner element!");
+        }
+    }
+
+    #show_next_item(): void | never {
+        this.#check_inner();
+
+        const total_items: number = this.#items?.length;
+
+        if (typeof this.#current_index === "number") {
+            this.#items[
+                this.#current_index
+            ]?.classList.remove("active");
+            this.#current_index =
+                (this.#current_index + 1) % total_items;
+            this.#items[this.#current_index]?.classList.add(
+                "active"
+            );
+
             if (!this.#inner) {
-                throw new Error("No carousel inner element!");
+                throw new Error(
+                    "No carousel inner element inside show!"
+                );
             }
-        }
 
-        #show_next_item(): void | never {
-            this.#check_inner();
-
-            const total_items: number = this.#items?.length;
-
-            if (typeof this.#current_index === "number") {
-                this.#items[this.#current_index]?.classList.remove("active");
-                this.#current_index = (this.#current_index + 1) % total_items;
-                this.#items[this.#current_index]?.classList.add("active");
-
-                if (!this.#inner) {
-                    throw new Error("No carousel inner element inside show!");
-                }
-
-                this.#inner.style.transform = `translateX(-${100 * this.#current_index}%)`;
-            }
+            this.#inner.style.transform = `translateX(-${100 * this.#current_index}%)`;
         }
     }
+}
 
-    const upd_correct_text = (child: Element, opt_title: string, tro_title: string, opt_desc: string, tro_desc: string): void => {
-        switch (child.id) {
-            case "optimize-windows-pc-carousel-title":
-                child.textContent = opt_title || "Loading...";
-                break;
-            case "troubleshoot-windows-pc-carousel-title":
-                child.textContent = tro_title || "Loading...";
-                break;
-            case "optimize-windows-pc-carousel-desc":
-                child.textContent = opt_desc || "Loading...";
-                break;
-            case "troubleshoot-windows-pc-carousel-desc":
-                child.textContent = tro_desc || "Loading...";
-                break;
-            default:
-                console.warn("No id match for carousel!");
-                break;
-        }
+const upd_correct_text = (
+    child: Element,
+    opt_title: string,
+    tro_title: string,
+    opt_desc: string,
+    tro_desc: string
+): void => {
+    switch (child.id) {
+        case "optimize-windows-pc-carousel-title":
+            child.textContent = opt_title || "Loading...";
+            break;
+        case "troubleshoot-windows-pc-carousel-title":
+            child.textContent = tro_title || "Loading...";
+            break;
+        case "optimize-windows-pc-carousel-desc":
+            child.textContent = opt_desc || "Loading...";
+            break;
+        case "troubleshoot-windows-pc-carousel-desc":
+            child.textContent = tro_desc || "Loading...";
+            break;
+        default:
+            console.warn("No id match for carousel!");
+            break;
     }
+};
 
-    const carousel_result = (opt_title: string, tro_title: string, opt_desc: string, tro_desc: string): void => {
-        document.querySelectorAll("main .carousel-item").forEach(item => {
-            Array.from(item.children).forEach(child => {
+const carousel_result = (
+    opt_title: string,
+    tro_title: string,
+    opt_desc: string,
+    tro_desc: string
+): void => {
+    document
+        .querySelectorAll("main .carousel-item")
+        .forEach((item) => {
+            Array.from(item.children).forEach((child) => {
                 if (!child.id) return;
-                upd_correct_text(child, opt_title, tro_title, opt_desc, tro_desc);
+                upd_correct_text(
+                    child,
+                    opt_title,
+                    tro_title,
+                    opt_desc,
+                    tro_desc
+                );
             });
         });
+};
+
+const check_meta_tags = (
+    optimize_title: string | null | undefined,
+    troubleshoot_title: string | null | undefined,
+    optimize_desc: string | null | undefined,
+    troubleshoot_desc: string | null | undefined
+): void | never => {
+    if (
+        !optimize_title ||
+        !troubleshoot_title ||
+        !optimize_desc ||
+        !troubleshoot_desc
+    ) {
+        throw new Error(
+            "No meta title or meta description!"
+        );
     }
+};
 
-    const check_meta_tags = (optimize_title: string | null | undefined, troubleshoot_title: string | null | undefined, optimize_desc: string | null | undefined, troubleshoot_desc: string | null | undefined): void | never => {
-        if (!optimize_title || !troubleshoot_title || !optimize_desc || !troubleshoot_desc) {
-            throw new Error("No meta title or meta description!");
-        }
-    };
+const upd_carousel_title_desc = async (): Promise<
+    void | never
+> => {
+    try {
+        const optimize_url: string =
+            "/html/guides/optimize-windows-pc.html";
+        const troubleshoot_url: string =
+            "/html/guides/troubleshoot-windows-pc.html";
 
-    const upd_carousel_title_desc = async(): Promise<void | never> => {
-        try {
-            const optimize_url: string = "/html/guides/optimize-windows-pc.html";
-            const troubleshoot_url: string = "/html/guides/troubleshoot-windows-pc.html";
-
-            const [optimize_res, troubleshoot_res] = await Promise.all([
+        const [optimize_res, troubleshoot_res] =
+            await Promise.all([
                 fetch(optimize_url),
-                fetch(troubleshoot_url),
+                fetch(troubleshoot_url)
             ]);
 
-            const [optimize_res_text, troubleshoot_res_text] = await Promise.all([
+        const [optimize_res_text, troubleshoot_res_text] =
+            await Promise.all([
                 optimize_res.text(),
-                troubleshoot_res.text(),
+                troubleshoot_res.text()
             ]);
 
-            const parser: DOMParser = new DOMParser();
-            const optimize_doc: Document = parser.parseFromString(optimize_res_text, "text/html");
-            const troubleshoot_doc: Document = parser.parseFromString(troubleshoot_res_text, "text/html");
+        const parser: DOMParser = new DOMParser();
+        const optimize_doc: Document =
+            parser.parseFromString(
+                optimize_res_text,
+                "text/html"
+            );
+        const troubleshoot_doc: Document =
+            parser.parseFromString(
+                troubleshoot_res_text,
+                "text/html"
+            );
 
-            const optimize_title: string | null | undefined = optimize_doc?.querySelector('meta[name="title"]')?.getAttribute('content');
-            const troubleshoot_title: string | null | undefined = troubleshoot_doc?.querySelector('meta[name="title"]')?.getAttribute('content');
-            const optimize_desc: string | null | undefined = optimize_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
-            const troubleshoot_desc: string | null | undefined = troubleshoot_doc?.querySelector('meta[name="description"]')?.getAttribute('content');
-            
-            check_meta_tags(optimize_title, troubleshoot_title, optimize_desc, troubleshoot_desc)
-            carousel_result(optimize_title as string, troubleshoot_title as string, optimize_desc as string, troubleshoot_desc as string);
-        }
-        catch (err) {
-            throw new Error(`During carousel update: ${err}`);
-        }
+        const optimize_title: string | null | undefined =
+            optimize_doc
+                ?.querySelector('meta[name="title"]')
+                ?.getAttribute("content");
+        const troubleshoot_title:
+            | string
+            | null
+            | undefined = troubleshoot_doc
+            ?.querySelector('meta[name="title"]')
+            ?.getAttribute("content");
+        const optimize_desc: string | null | undefined =
+            optimize_doc
+                ?.querySelector('meta[name="description"]')
+                ?.getAttribute("content");
+        const troubleshoot_desc: string | null | undefined =
+            troubleshoot_doc
+                ?.querySelector('meta[name="description"]')
+                ?.getAttribute("content");
+
+        check_meta_tags(
+            optimize_title,
+            troubleshoot_title,
+            optimize_desc,
+            troubleshoot_desc
+        );
+        carousel_result(
+            optimize_title as string,
+            troubleshoot_title as string,
+            optimize_desc as string,
+            troubleshoot_desc as string
+        );
+    } catch (err) {
+        throw new Error(`During carousel update: ${err}`);
     }
+};
 
-    await upd_carousel_title_desc();
+upd_carousel_title_desc();
 
-    new Carousel();
-});
+new Carousel();

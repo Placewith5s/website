@@ -1,161 +1,289 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://www.placewith5s.com/chatbot">
-    <!-- Primary Meta Tags -->
-    <title>Chatbot | Placewith5s</title>
-    <meta name="title" content="Chatbot | Placewith5s">
-    <meta name="description" content="">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.placewith5s.com/chatbot">
-    <meta property="og:title" content="Chatbot | Placewith5s">
-    <meta property="og:description" content="">
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.placewith5s.com/chatbot">
-    <meta property="twitter:title" content="Chatbot | Placewith5s">
-    <meta property="twitter:description" content="">
-    
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "url": "https://www.placewith5s.com/chatbot",
-        "name": "Chatbot | Placewith5s",
-        "description": "",
-        "publisher": {
-          "@type": "Organization",
-          "name": "Placewith5s",
-          "url": "https://www.placewith5s.com/chatbot",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.placewith5s.com/icons/Settings.svg"
-          }
-        }
-      }
-    </script>
-    
-    <link rel="stylesheet" href="/css/top-n-bottom.css">
-    <link rel="stylesheet" href="/css/chatbot.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="canonical"
+            href="https://www.placewith5s.com/chatbot" />
+        <!-- Primary Meta Tags -->
+        <title>Chatbot | Placewith5s</title>
+        <meta
+            name="title"
+            content="Chatbot | Placewith5s" />
+        <meta name="description" content="" />
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://www.placewith5s.com/chatbot" />
+        <meta
+            property="og:title"
+            content="Chatbot | Placewith5s" />
+        <meta property="og:description" content="" />
+        <!-- Twitter -->
+        <meta
+            property="twitter:card"
+            content="summary_large_image" />
+        <meta
+            property="twitter:url"
+            content="https://www.placewith5s.com/chatbot" />
+        <meta
+            property="twitter:title"
+            content="Chatbot | Placewith5s" />
+        <meta property="twitter:description" content="" />
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
-  </head>
-  <body>
-    <header>
-      <nav class="desktop-links" aria-label="Main Navigation">
-        <a href="/" aria-label="Home">
-          <span>Home</span>
-        </a>
-        <a href="/html/about/about-software" aria-label="About Tools">
-          <span>About Tools</span>
-        </a>
-        <a href="/html/about/about-us" aria-label="About Us">
-          <span>About Us</span>
-        </a>
-        <a href="/html/faq" aria-label="FAQs">
-          <span>FAQs</span>
-        </a>
-        <details class="dropdown-menu-container">
-          <summary id="dropdown-menu">Guides</summary>
-            <a href="/html/guides/optimize-windows-pc">Optimize Windows PC</a>
-            <a href="/html/guides/troubleshoot-windows-pc">Troubleshoot Windows PC</a>
-        </details>
-      </nav>
-      <button class="menu-icon" id="menu-icon" aria-haspopup="menu" aria-label="Open Menu">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </button>
-      <nav class="drawer" id="drawer" role="menu">
-        <a href="/" id="home-link" role="menuitem" aria-label="Home">
-          <span>Home</span>
-        </a>
-        <a href="/html/about/about-software" role="menuitem" id="about-software-link" aria-label="About Tools">
-          <span>About Tools</span>
-        </a>
-        <a href="/html/about/about-us" id="about-us-link" role="menuitem" aria-label="About Us">
-          <span>About Us</span>
-        </a>
-        <a href="/html/faq" id="faq-link" role="menuitem" aria-label="FAQs">
-          <span>FAQs</span>
-        </a>
-        <a href="/html/guides/optimize-windows-pc" id="optimize-windows-pc-link" role="menuitem" aria-label="Optimize Windows PC">
-          <span>Optimize Windows PC</span>
-        </a>
-        <a href="/html/guides/troubleshoot-windows-pc" id="troubleshoot-windows-pc-link" role="menuitem" aria-label="Troubleshoot Windows PC">
-          <span>Troubleshoot Windows PC</span>
-        </a>
-        <button id="hide-drawer-btn">Hide</button>
-      </nav>
-      <h1>Chatbot | Placewith5s</h1>
-    </header>
-    
-    <main>
-      <select name="model-choices" id="model-choices">
-        <option value="deepseek-3.2">Deepseek 3.2 (no image support)</option>
-        <option value="gemma-3">Gemma 3 (Google)</option>
-        <option value="gpt-oss">GPT-oss (Open AI)</option>
-        <option value="ministral-3">Ministral 3</option>
-        <option value="qwen-3-vl">Qwen 3 VL</option>
-        <option value="qwen-3.5">Qwen 3.5</option>
-      </select>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "url": "https://www.placewith5s.com/chatbot",
+                "name": "Chatbot | Placewith5s",
+                "description": "",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Placewith5s",
+                    "url": "https://www.placewith5s.com/chatbot",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.placewith5s.com/icons/Settings.svg"
+                    }
+                }
+            }
+        </script>
 
-        <input id="msg" type="text" placeholder="Message..." required>
-        <input id="image" type="file" accept="image/*">
-        <button class="spaced-top-bottom" id="send-btn" type="button">Send</button>
+        <link
+            rel="stylesheet"
+            href="/css/top-n-bottom.css" />
+        <link rel="stylesheet" href="/css/chatbot.css" />
 
-        <p id="wait-msg"></p>
-        <div id="response-result"></div>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <nav
+                class="desktop-links"
+                aria-label="Main Navigation">
+                <a href="/" aria-label="Home">
+                    <span>Home</span>
+                </a>
+                <a
+                    href="/html/about/about-software"
+                    aria-label="About Tools">
+                    <span>About Tools</span>
+                </a>
+                <a
+                    href="/html/about/about-us"
+                    aria-label="About Us">
+                    <span>About Us</span>
+                </a>
+                <a href="/html/faq" aria-label="FAQs">
+                    <span>FAQs</span>
+                </a>
+                <details class="dropdown-menu-container">
+                    <summary id="dropdown-menu">
+                        Guides
+                    </summary>
+                    <a
+                        href="/html/guides/optimize-windows-pc"
+                        >Optimize Windows PC</a
+                    >
+                    <a
+                        href="/html/guides/troubleshoot-windows-pc"
+                        >Troubleshoot Windows PC</a
+                    >
+                </details>
+            </nav>
+            <button
+                class="menu-icon"
+                id="menu-icon"
+                aria-haspopup="menu"
+                aria-label="Open Menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+            <nav class="drawer" id="drawer" role="menu">
+                <a
+                    href="/"
+                    id="home-link"
+                    role="menuitem"
+                    aria-label="Home">
+                    <span>Home</span>
+                </a>
+                <a
+                    href="/html/about/about-software"
+                    role="menuitem"
+                    id="about-software-link"
+                    aria-label="About Tools">
+                    <span>About Tools</span>
+                </a>
+                <a
+                    href="/html/about/about-us"
+                    id="about-us-link"
+                    role="menuitem"
+                    aria-label="About Us">
+                    <span>About Us</span>
+                </a>
+                <a
+                    href="/html/faq"
+                    id="faq-link"
+                    role="menuitem"
+                    aria-label="FAQs">
+                    <span>FAQs</span>
+                </a>
+                <a
+                    href="/html/guides/optimize-windows-pc"
+                    id="optimize-windows-pc-link"
+                    role="menuitem"
+                    aria-label="Optimize Windows PC">
+                    <span>Optimize Windows PC</span>
+                </a>
+                <a
+                    href="/html/guides/troubleshoot-windows-pc"
+                    id="troubleshoot-windows-pc-link"
+                    role="menuitem"
+                    aria-label="Troubleshoot Windows PC">
+                    <span>Troubleshoot Windows PC</span>
+                </a>
+                <button id="hide-drawer-btn">Hide</button>
+            </nav>
+            <h1>Chatbot | Placewith5s</h1>
+        </header>
 
-      <!-- twitter-share-button shouldn't be changed to twitter-share-link (possible third party usage) -->
-      <a class="twitter-share-button" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?url=https://www.placewith5s.com/chatbot&utm_source=placewith5s">Share on Twitter</a>
-      
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      <a class="reddit-share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fplacewith5s.com/chatbot&utm_source=placewith5s" target="_blank" rel="noopener noreferrer">Share on Reddit</a>
-    </main>
-    
-    <footer>
-      <div class="footer-container">
-        <div aria-labelledby="footer-about-heading" class="footer-column">
-          <h4 id="footer-about-heading">About</h4>
-          <nav class="footer-links-about">
-            <a href="/html/about/about-software">About Tools</a>
-            <a href="/html/about/about-us">About Us</a>
-          </nav>
-        </div>
-        <div aria-labelledby="footer-policies-heading" class="footer-column">
-          <h4 id="footer-policies-heading">Policies</h4>
-          <nav class="footer-links-policies">
-            <a href="/html/policies/privacy-policy">Privacy Policy</a>
-            <a href="/html/policies/terms-of-service">Terms of Service</a>
-          </nav>
-        </div>
-        <div aria-labelledby="footer-contact-heading" class="footer-column">
-          <h4 id="footer-contact-heading">Contact</h4>
-          <nav class="footer-links-contact">
-            <a href="/html/contact-form">Contact Us</a>
-          </nav>
-        </div>
-        <div aria-labelledby="chatbot-heading" class="footer-column">
-          <h4 id="chatbot-heading">Chatbot</h4>
-          <nav class="footer-links-chatbot">
-            <a href="/html/chatbot">Chatbot</a>
-          </nav>
-        </div>
-      </div>
-      <p class="copyright"> © 2026-<span id="year"></span>
-        Front-end source code is licensed under the MIT license.
-        <span>&#8201;Website content, branding, and design are proprietary.</span>
-        <span>&#8201;Third-party components are licensed under their respective licenses.</span>
-      </p>
-    </footer>
-    
-    <script src="/js/script.js" defer></script>
-    <script src="/js/footer-date.js" defer></script>
-    <script src="/js/chatbot.js" defer></script>
-  </body>
+        <main>
+            <select name="model-choices" id="model-choices">
+                <option value="deepseek-3.2">
+                    Deepseek 3.2 (no image support)
+                </option>
+                <option value="gemma-3">
+                    Gemma 3 (Google)
+                </option>
+                <option value="gpt-oss">
+                    GPT-oss (Open AI)
+                </option>
+                <option value="ministral-3">
+                    Ministral 3
+                </option>
+                <option value="qwen-3-vl">Qwen 3 VL</option>
+                <option value="qwen-3.5">Qwen 3.5</option>
+            </select>
+
+            <input
+                id="msg"
+                type="text"
+                placeholder="Message..."
+                required />
+            <input
+                id="image"
+                type="file"
+                accept="image/*" />
+            <button
+                class="spaced-top-bottom"
+                id="send-btn"
+                type="button">
+                Send
+            </button>
+
+            <p id="wait-msg"></p>
+            <div id="response-result"></div>
+
+            <!-- twitter-share-button shouldn't be changed to twitter-share-link (possible third party usage) -->
+            <a
+                class="twitter-share-button"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/intent/tweet?url=https://www.placewith5s.com/chatbot&utm_source=placewith5s"
+                >Share on Twitter</a
+            >
+
+            <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"></script>
+            <a
+                class="reddit-share-link"
+                href="https://www.reddit.com/submit?url=https%3A%2F%2Fplacewith5s.com/chatbot&utm_source=placewith5s"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Share on Reddit</a
+            >
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div
+                    aria-labelledby="footer-about-heading"
+                    class="footer-column">
+                    <h4 id="footer-about-heading">About</h4>
+                    <nav class="footer-links-about">
+                        <a href="/html/about/about-software"
+                            >About Tools</a
+                        >
+                        <a href="/html/about/about-us"
+                            >About Us</a
+                        >
+                    </nav>
+                </div>
+                <div
+                    aria-labelledby="footer-policies-heading"
+                    class="footer-column">
+                    <h4 id="footer-policies-heading">
+                        Policies
+                    </h4>
+                    <nav class="footer-links-policies">
+                        <a
+                            href="/html/policies/privacy-policy"
+                            >Privacy Policy</a
+                        >
+                        <a
+                            href="/html/policies/terms-of-service"
+                            >Terms of Service</a
+                        >
+                    </nav>
+                </div>
+                <div
+                    aria-labelledby="footer-contact-heading"
+                    class="footer-column">
+                    <h4 id="footer-contact-heading">
+                        Contact
+                    </h4>
+                    <nav class="footer-links-contact">
+                        <a href="/html/contact-form"
+                            >Contact Us</a
+                        >
+                    </nav>
+                </div>
+                <div
+                    aria-labelledby="chatbot-heading"
+                    class="footer-column">
+                    <h4 id="chatbot-heading">Chatbot</h4>
+                    <nav class="footer-links-chatbot">
+                        <a href="/html/chatbot">Chatbot</a>
+                    </nav>
+                </div>
+            </div>
+            <p class="copyright">
+                © 2026-<span id="year"></span>
+                Front-end source code is licensed under the
+                MIT license.
+                <span
+                    >&#8201;Website content, branding, and
+                    design are proprietary.</span
+                >
+                <span
+                    >&#8201;Third-party components are
+                    licensed under their respective
+                    licenses.</span
+                >
+            </p>
+        </footer>
+
+        <script src="/js/script.js" defer></script>
+        <script src="/js/footer-date.js" defer></script>
+        <script src="/js/chatbot.js" defer></script>
+    </body>
 </html>
