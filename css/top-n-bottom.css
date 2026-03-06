@@ -338,6 +338,10 @@ nav.drawer a,
     position: static;
     visibility: visible
 }
+.twitter-share-button,
+.reddit-share-link {
+    transform: scale(1) !important
+}
 @media only screen and (max-width: 320px) {
     nav.desktop-links {
         display: none
