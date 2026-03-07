@@ -155,6 +155,8 @@
         </header>
 
         <main>
+            <div id="response-result"></div>
+
             <select name="model-choices" id="model-choices">
                 <option value="deepseek-3.2">
                     Deepseek 3.2 (no image support)
@@ -181,15 +183,15 @@
                 id="image"
                 type="file"
                 accept="image/*" />
+
+            <p id="wait-msg"></p>
+
             <button
                 class="spaced-top-bottom"
                 id="send-btn"
                 type="button">
                 Send
             </button>
-
-            <p id="wait-msg"></p>
-            <div id="response-result"></div>
 
             <script
                 async

@@ -8,25 +8,16 @@ main .chat-response {
     border: 0.1rem solid var(--accent);
     border-radius: 0.5rem;
     margin-bottom: 4rem;
-    order: 1;
     white-space: pre-wrap
 }
 main input[type="text"] {
-    order: 2;
     padding: 1rem;
     width: 100%
 }
 main input[type="file"] {
-    align-self: flex-start;
-    order: 3
-}
-main p#wait-msg {
-    order: 4
+    align-self: flex-start
 }
 main button[type="button"] {
     border-radius: 1rem;
-    order: 5;
     width: 15%
 }
-.twitter-share-button {order: 6}
-.reddit-share-link {order: 7}
