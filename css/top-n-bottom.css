@@ -26,14 +26,14 @@ html {
 @supports (scrollbar-gutter: stable) {
     html {scrollbar-gutter: stable}
 }
-body {
-    background-color: var(--bg);
-    color: var(--fg)
-}
 body,
 main {
     max-width: 100%;
     min-height: 100svh
+}
+body {
+    background-color: var(--bg);
+    color: var(--fg)
 }
 header h1 {
     border-bottom: 0.12rem solid var(--fg);

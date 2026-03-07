@@ -1,7 +1,9 @@
 main,
-main button[type="button"] {
+main .chat-options {
+    display: flex
+}
+main {
     align-items: center;
-    display: flex;
     justify-content: center
 }
 main .chat-response {
@@ -10,14 +12,29 @@ main .chat-response {
     margin-bottom: 4rem;
     white-space: pre-wrap
 }
-main input[type="text"] {
-    padding: 1rem;
-    width: 100%
+main .chat-options {
+    flex-direction: column;
+    margin-bottom: 3rem
 }
 main input[type="file"] {
-    align-self: flex-start
+    display: none
 }
-main button[type="button"] {
-    border-radius: 1rem;
-    width: 15%
+main label,
+main .chat-rows * {
+    border-radius: 1rem
+}
+main label {
+    background: var(--fg);
+    color: var(--bg);
+    cursor: pointer;
+    margin: 1rem;
+    text-align: center
+}
+main .chat-rows {
+    display: flex;
+    gap: 1rem
+}
+main input[type="text"] {
+    height: 5svh;
+    padding: 1rem
 }
