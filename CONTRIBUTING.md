@@ -20,15 +20,16 @@ HTML
 - Any usage of b and br won't be accepted. Use CSS instead
 
 CSS
+- No to super deep selector nestings
 - Properties: Alphabetical order. Exception: "-" properties should come before a
 - No empty newlines (doesn't apply to comments)
 - No semi colon for every ending property of selectors
 - Selector placement: Parent above child (nav rules above a rules)
 - When grouping selectors, every new selector should be exactly 1 newline
-- Selector ONLY inside main should start with main (main .selector)
+- Selector ONLY inside main should start with main (main section). Exceptions: classes or ID selectors
 - Selector should NEVER be body. Exception: body as the ONLY selector (body)
-- One liners on selectors with multiple properties - not accepted: (a {color: color; display: display})
-- One liners on grouped selectors with multiple properties - not accepted: (a, form {color: color; display: display})
+- One liners on grouped selectors - not accepted
+- One liners on non-grouped selectors with multiple properties - not accepted: a {color: color; display: display}
 
 JavaScript
 - Do not manually edit generated JavaScript files; modify the source (TypeScript) instead

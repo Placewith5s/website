@@ -35,6 +35,18 @@ body {
     background-color: var(--bg);
     color: var(--fg)
 }
+main,
+div.search-container,
+nav.desktop-links,
+nav.desktop-links a,
+footer,
+footer span + span,
+.footer-container,
+footer .copyright,
+footer nav[class^="footer-links-"] a,
+.strawpoll-embed {
+    display: flex
+}
 header h1 {
     border-bottom: 0.12rem solid var(--fg);
     font-size: 40px;
@@ -88,10 +100,6 @@ img {
         opacity: 1;
         transform: scale(1)
     }
-}
-main {
-    margin-top: 1.38rem;
-    padding: 1.38rem
 }
 main .hide {
     opacity: 0;
@@ -205,7 +213,6 @@ nav.desktop-links details.dropdown-menu-container a {
     }
 }
 main section:not(:last-child) {margin-bottom: 10rem}
-button.menu-icon, nav.drawer {z-index: 1000}
 button.menu-icon {
     backdrop-filter: blur(1rem);
     border: 0.06rem solid var(--fg);
@@ -222,7 +229,8 @@ button.menu-icon div.line {
 }
 button.menu-icon,
 nav.drawer {
-    position: fixed
+    position: fixed;
+    z-index: 1000
 }
 nav.drawer {
     border: 0.06rem solid var(--fg);
@@ -310,18 +318,6 @@ main,
 footer nav[class^="footer-links-"] a,
 .strawpoll-embed {
     flex-direction: column
-}
-main,
-div.search-container,
-nav.desktop-links,
-nav.desktop-links a,
-footer,
-footer span + span,
-.footer-container,
-footer .copyright,
-footer nav[class^="footer-links-"] a,
-.strawpoll-embed {
-    display: flex
 }
 /* Strawpoll, keep styles as is */
 .strawpoll-embed {
