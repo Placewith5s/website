@@ -20,9 +20,8 @@ const send = async (): Promise<void> => {
     const response_result: HTMLDivElement | null =
         main.querySelector("#response-result");
 
-    const check_invalid_elements = async (): Promise<
-        void | never
-    > => {
+    const check_invalid_elements = (): void | never
+    => {
         if (
             !model_choices ||
             !msg ||
@@ -34,7 +33,7 @@ const send = async (): Promise<void> => {
         }
     };
 
-    await check_invalid_elements();
+    check_invalid_elements();
 
     const alert_msg: string = "Error! Try again later!";
 
@@ -60,14 +59,12 @@ const send = async (): Promise<void> => {
         );
 
         if (!response.ok) {
-            alert(alert_msg);
             throw new Error("Invalid response received!");
         }
 
         const body_text: string = await response.text();
 
         if (!body_text) {
-            alert(alert_msg);
             throw new Error("No body text!");
         }
 
