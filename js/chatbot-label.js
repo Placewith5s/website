@@ -13,7 +13,7 @@ if (!file_input) {
 }
 file_input.addEventListener("change", () => {
     if (!file_input.value) {
-        file_label.textContent = "Upload image";
+        file_label.textContent = "Add image";
     }
     else {
         const file_name = file_input.value

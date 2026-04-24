@@ -10,7 +10,7 @@ const send = async () => {
     const image_inp = main.querySelector("#image");
     const wait_msg = main.querySelector("#wait-msg");
     const response_result = main.querySelector("#response-result");
-    const check_invalid_elements = async () => {
+    const check_invalid_elements = () => {
         if (!model_choices ||
             !msg ||
             !send_btn ||
@@ -19,7 +19,7 @@ const send = async () => {
             throw new Error("Required elements missing!");
         }
     };
-    await check_invalid_elements();
+    check_invalid_elements();
     const alert_msg = "Error! Try again later!";
     const fd = new FormData();
     fd.append("model-choices", model_choices.value);
@@ -36,12 +36,10 @@ const send = async () => {
             body: fd
         });
         if (!response.ok) {
-            alert(alert_msg);
             throw new Error("Invalid response received!");
         }
         const body_text = await response.text();
         if (!body_text) {
-            alert(alert_msg);
             throw new Error("No body text!");
         }
         const raw_html = marked.parse(body_text, {
