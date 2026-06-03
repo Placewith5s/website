@@ -2,6 +2,8 @@ main div.form-group input {
     margin-left: 1rem
 }
 main textarea#message {
+    background: transparent;
+    color: var(--fg);
     display: block;
     margin-top: 1rem;
     width: 75%
