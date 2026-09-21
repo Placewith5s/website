@@ -1,0 +1,40 @@
+name: Bug report
+description: Report a bug
+labels: bug
+
+body:
+- type: textarea
+  attributes:
+    label: Steps To Reproduce
+    description: "How do you trigger this bug? Please walk us through it step by step."
+    value: |
+      1.
+      2.
+      3.
+      ...
+    render: bash
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Behaviors
+    description: "Expected and actual."
+    value: "Expected: . Actual: ."
+  validations:
+    required: true
+
+- type: textarea
+  attributes:
+    label: Workaround
+    value: "None"
+  validations:
+    required: false
+
+- type: input
+  id: os
+  attributes:
+    label: OS
+    placeholder: "Windows 11 Pro 24H2"
+  validations:
+    required: true
