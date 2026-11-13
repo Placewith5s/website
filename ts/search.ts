@@ -63,16 +63,20 @@ class Search {
 
             let found: boolean = false;
 
-            sections.forEach((section) => {
-                if (search_term) {
-                    const match: boolean =
-                        section.textContent
-                            .toLowerCase()
-                            .includes(search_term);
+            if (!search_term) {
+                sections.forEach((section) => this.#handle_match(true, section));
+                this.#toggle_not_found_msg(false);
+                return;
+            };
 
-                    this.#handle_match(match, section);
-                    found ||= match;
-                }
+            sections.forEach((section) => {
+                const match: boolean =
+                    section.textContent
+                        .toLowerCase()
+                        .includes(search_term);
+
+                this.#handle_match(match, section);
+                found ||= match;
             });
             this.#toggle_not_found_msg(!found);
         } catch (err) {

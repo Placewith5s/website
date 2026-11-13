@@ -43,14 +43,18 @@ class Search {
                 .toLowerCase();
             const sections = document.querySelectorAll(".search-section");
             let found = false;
+            if (!search_term) {
+                sections.forEach((section) => this.#handle_match(true, section));
+                this.#toggle_not_found_msg(false);
+                return;
+            }
+            ;
             sections.forEach((section) => {
-                if (search_term) {
-                    const match = section.textContent
-                        .toLowerCase()
-                        .includes(search_term);
-                    this.#handle_match(match, section);
-                    found ||= match;
-                }
+                const match = section.textContent
+                    .toLowerCase()
+                    .includes(search_term);
+                this.#handle_match(match, section);
+                found ||= match;
             });
             this.#toggle_not_found_msg(!found);
         }
